@@ -1,6 +1,5 @@
 const express = require('express');
 const mongoose = require('mongoose');
-const dotenv = require('dotenv');
 const cors = require('cors');
 const bodyParser = require('body-parser');
 const multer = require('multer');
@@ -11,9 +10,6 @@ const productRoutes = require('./routes/productRoutes');
 const adminRoutes = require('./routes/adminRoutes');
 const saleRoutes = require('./routes/saleRoutes');
 const orderRoutes = require('./routes/orderRoutes');
-
-// Initialize dotenv for environment variables
-dotenv.config();
 
 // Initialize the app
 const app = express();
@@ -45,8 +41,11 @@ app.use('/api/sales', saleRoutes);
 app.use('/api/orders', orderRoutes);
 app.use('/api/products', productRoutes);
 
+// MongoDB Connection URI (Directly added for testing purposes)
+const MONGO_URI = "mongodb+srv://tharuntk143143:1234@navi.7n4g6.mongodb.net/myDatabase?retryWrites=true&w=majority";
+
 // Connect to MongoDB
-mongoose.connect(process.env.MONGO_URI, {
+mongoose.connect(MONGO_URI, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
 })
@@ -58,7 +57,7 @@ mongoose.connect(process.env.MONGO_URI, {
 });
 
 // Start the server
-const PORT = process.env.PORT || 5000;
+const PORT = 5000; // Directly adding port for testing
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
 });
