@@ -26,9 +26,10 @@ const Footer = () => {
         {/* Section 3: Contact Us */}
         <div>
           <h3 className="text-lg font-semibold mb-4">Contact Us</h3>
-          <p className="text-sm">Email: support@ranifoods.com</p>
-          <p className="text-sm">Phone: +91 123 456 7890</p>
-          <p className="text-sm">Address: Rani Foods, 123 Main Street, City, Country</p>
+          <p className="text-sm">Email: <a href="mailto:raniFoodsnenthara@gmail.com">raniFoodsnenthara@gmail.com</a></p>
+          <p className="text-sm">Sales Email: <a href="mailto:Ranifoods@proton.me">Ranifoods@proton.me</a></p>
+          <p className="text-sm">Phone: +91 6381360779</p>
+          <p className="text-sm">Address: Rani Foods, RC School Street, Erasakkanyakkanur, Theni - 625515</p>
         </div>
 
         {/* Section 4: Social Media */}
@@ -38,7 +39,7 @@ const Footer = () => {
             <a href="https://facebook.com" className="text-white hover:text-light-green" target="_blank" rel="noopener noreferrer">
               <i className="fab fa-facebook-square text-xl"></i>
             </a>
-            <a href="https://instagram.com" className="text-white hover:text-light-green" target="_blank" rel="noopener noreferrer">
+            <a href="https://www.instagram.com/rani_foods_netharam_powder/profilecard/?igsh=MXhiMWZudHBudnRjYw==" className="text-white hover:text-light-green" target="_blank" rel="noopener noreferrer">
               <i className="fab fa-instagram text-xl"></i>
             </a>
             <a href="https://twitter.com" className="text-white hover:text-light-green" target="_blank" rel="noopener noreferrer">
