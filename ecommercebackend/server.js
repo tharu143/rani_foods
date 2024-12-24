@@ -61,3 +61,5 @@ const PORT = 5000; // Directly adding port for testing
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
 });
+// Export app for serverless function
+module.exports = app;
