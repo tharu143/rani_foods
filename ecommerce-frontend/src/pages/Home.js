@@ -1,5 +1,6 @@
-import bananna from '../pages/banana.jpg';
 import React from 'react';
+import { Link } from 'react-router-dom'; // Import Link from React Router
+import bananna from '../pages/banana.jpg';
 
 function Home() {
   return (
@@ -13,9 +14,13 @@ function Home() {
           Discover the natural benefits of Nenthra Banana Powder for the healthy
           growth of children. 100% organic and made with love.
         </p>
-        <button className="bg-dark-green text-white px-6 py-2 rounded hover:bg-light-green hover:text-dark-green">
-          Shop Now
-        </button>
+
+        {/* Adjusted position of the button with margin-top */}
+        <Link to="/products">
+          <button className="bg-dark-green text-white px-6 py-2 rounded hover:bg-light-green hover:text-dark-green mt-6">
+            Shop Now
+          </button>
+        </Link>
       </div>
 
       {/* Right: Animated Image */}
