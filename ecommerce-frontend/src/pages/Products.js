@@ -62,6 +62,15 @@ const Products = () => {
   ];
 
   const [error, setError] = useState(null);
+  const [showContactInfo, setShowContactInfo] = useState(false);
+
+  const handleAddToCartClick = (productName) => {
+    // Trigger WhatsApp group redirection
+    window.location.href = 'https://chat.whatsapp.com/KHWJpoO5pWaGSe8gAz75Le';  // Replace with your WhatsApp group link
+
+    // Show contact information and image after the button is clicked
+    setShowContactInfo(true);
+  };
 
   if (error) {
     return <div>{error}</div>;
@@ -102,13 +111,32 @@ const Products = () => {
                       <div className="relative z-10">
                         <h5 className="text-lg font-semibold text-white">{size.weight}</h5>
                         <p className="text-sm text-white">₹{size.price}</p>
-                        <button className="mt-2 w-full bg-dark-green text-white py-2 rounded hover:bg-light-green hover:text-dark-green">
+                        <button 
+                          onClick={() => handleAddToCartClick(product.name)}
+                          className="mt-2 w-full bg-dark-green text-white py-2 rounded hover:bg-light-green hover:text-dark-green"
+                        >
                           Add to Cart
                         </button>
                       </div>
                     </div>
                   ))}
                 </div>
+
+                {/* Display contact info and image after Add to Cart is clicked */}
+                {showContactInfo && (
+                  <div className="mt-6 text-center">
+                    <h5 className="text-xl font-semibold text-dark-green">Order via WhatsApp</h5>
+                    <p className="text-gray-700 mt-2">Contact me on my number for further details</p>
+                    <p className="text-lg font-bold text-dark-green">+91 6381360779 </p>
+                    <a
+                      href="https://chat.whatsapp.com/KHWJpoO5pWaGSe8gAz75Le"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+           
+                    </a>
+                  </div>
+                )}
               </div>
             ))}
           </div>
